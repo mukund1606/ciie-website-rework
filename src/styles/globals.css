@@ -1,107 +1,128 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metrophobic&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+// Base Font - 21px, 1.3125rem and Scale 1.414
+pc: {
+  p: "1.3125rem",
+  h6: "1.3125rem",
+  h5: "1.8559rem",
+  h4: "2.6242rem",
+  h3: "3.7106rem",
+  h2: "5.2468rem",
+  h1: "7.4190rem",
+},
+// Base Font - 18px, 1.125rem and Scale 1.414
+tablet: {
+  p: "1.125rem",
+  h6: "1.125rem",
+  h5: "1.5908rem",
+  h4: "2.2493rem",
+  h3: "3.1805rem",
+  h2: "4.4973rem",
+  h1: "6.3592rem",
+},
+// Base Font - 18px, 1.125rem and Scale 1.250
+mobile: {
+  p: "1.125rem",
+  h6: "1.125rem",
+  h5: "1.4063rem",
+  h4: "1.7578rem",
+  h3: "2.1973rem",
+  h2: "2.7466rem",
+  h1: "3.4332rem",
+},
+ */
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+@layer components {
+  body,
+  p,
+  a,
+  li,
+  span,
+  button,
+  h6,
+  h5,
+  h4,
+  h3,
+  h2,
+  h1 {
+    @apply leading-[1.3];
   }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  h1,
+  h2,
+  h6 {
+    @apply font-bold;
+  }
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+  h3 {
+    @apply font-medium;
+  }
+  body,
+  p,
+  button {
+    @apply font-metrophobic text-[1rem] md:text-[1.125rem] lg:text-[1.25rem] text-lightTheme-black-100 dark:text-darkTheme-white-100;
+  }
+  h6 {
+    @apply font-cormorant text-[1rem] md:text-[1.125rem] lg:text-[1.25rem] text-lightTheme-black-100 dark:text-darkTheme-white-100;
+  }
+  h5 {
+    @apply font-cormorant text-[1.25rem] md:text-[1.5rem] lg:text-[1.7675rem] text-lightTheme-black-100 dark:text-darkTheme-white-100;
+  }
+  h4 {
+    @apply font-cormorant text-[1.5625rem] md:text-[2rem] lg:text-[2.5rem] text-lightTheme-black-100 dark:text-darkTheme-white-100;
+  }
+  h3 {
+    @apply font-cormorant text-[1.953125rem] md:text-[2.66rem] lg:text-[3.53rem] text-lightTheme-black-100 dark:text-darkTheme-white-100;
+  }
+  h2 {
+    @apply font-cormorant text-[2.441406rem] md:text-[3.55rem] lg:text-[5rem] text-lightTheme-black-100 dark:text-darkTheme-white-100;
+  }
+  h1 {
+    @apply font-cormorant text-[3.05175rem] md:text-[4.735rem] lg:text-[7.06rem] text-lightTheme-black-100 dark:text-darkTheme-white-100;
+  }
+  button.primary {
+    @apply px-[2rem] py-[1rem] bg-gradient-to-r from-lightTheme-primary to-lightTheme-secondary dark:from-darkTheme-primary dark:to-darkTheme-secondary text-lightTheme-white dark:text-darkTheme-white-100 shadow-lg rounded-[100px];
+  }
+  button.primary:hover {
+    @apply scale-95 transition duration-300 ease-in-out;
+  }
+  button.primary:active {
+    @apply duration-75 opacity-80;
+  }
+  button.primary:focus {
+    @apply outline-none;
+  }
+  button.primary:disabled {
+    @apply opacity-50 cursor-not-allowed bg-[#C18D9E];
+  }
+  button.primary:disabled:hover {
+    @apply scale-100;
+  }
+  button.secondary {
+    @apply px-[2rem] py-[1rem] bg-lightTheme-white dark:bg-darkTheme-black text-lightTheme-black-100 dark:text-darkTheme-white-100 shadow-lg border-2 border-lightTheme-black-100 dark:border-darkTheme-white-100 rounded-[100px];
+  }
+  button.secondary:hover {
+    @apply scale-95 transition duration-300 ease-in-out bg-lightTheme-black-100 dark:bg-darkTheme-white-100 text-lightTheme-white dark:text-darkTheme-black;
+  }
+  button.secondary:active {
+    @apply duration-75 opacity-95 bg-lightTheme-black-75 dark:bg-darkTheme-white-75 text-lightTheme-white dark:text-darkTheme-black;
+  }
+  button.secondary:focus {
+    @apply outline-none;
+  }
+  button.secondary:disabled {
+    @apply opacity-50 cursor-not-allowed bg-lightTheme-black-25 dark:bg-darkTheme-white-25 text-lightTheme-black-50 dark:text-darkTheme-white-50;
+  }
+  button.secondary:disabled:hover {
+    @apply scale-100;
   }
 }
