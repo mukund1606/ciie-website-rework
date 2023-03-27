@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import srmLogoWhite from "@/assets/SRM_Logo_white.png";
-import srmLogoBlack from "@/assets/SRM_Logo_Black.png";
+import srmLogoWhite from "../assets/SRM_Logo_White.png";
+import srmLogoBlack from "../assets/SRM_Logo_Black.png";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
