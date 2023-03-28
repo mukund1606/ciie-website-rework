@@ -61,7 +61,6 @@ export default function Events() {
       .then((data) => {
         setAllData(sortEvents(data));
         setIsLoaded(true);
-        console.log(allData);
       });
   }, []);
 
@@ -131,10 +130,15 @@ const sortEvents = (events) => {
   const pastEvents = [];
   const upcomingEvents = [];
   const ongoingEvents = [];
-  const today = new Date();
+  let today = new Date();
+  today = new Date();
   events.forEach((event) => {
-    const eventEndDate = new Date(event.endDate);
-    const eventStartDate = new Date(event.startDate);
+    const eventEndDate = new Date(
+      String(event.endDate).split("Z")[0] + "+05:30"
+    );
+    const eventStartDate = new Date(
+      String(event.startDate).split("Z")[0] + "+05:30"
+    );
     if (eventEndDate < today) {
       pastEvents.push(event);
     } else if (eventStartDate > today) {

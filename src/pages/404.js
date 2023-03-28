@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center justify-center w-full gap-5">
+      <div className="absolute top-0 flex flex-col items-center justify-center w-full h-[100vh] gap-5 bg-opacity-80 dark:bg-opacity-80 bg-lightTheme-white dark:bg-darkTheme-black">
         <h1 className="p-2 text-6xl font-bold">404 Page Not Found</h1>
         <Link href="/">
           <h1 className="p-2 text-3xl font-bold">

@@ -23,7 +23,7 @@ export default function Collage({ className, images }) {
       <div className="w-full col-span-2">
         <div
           style={{
-            backgroundImage: `url(${images[randomNum1].metaLink})`,
+            backgroundImage: `url(${images[randomNum1].srcLink})`,
           }}
           className="w-full duration-500 bg-center  h-[8.5rem] bg-cover aspect-video rounded-2xl"
         ></div>
@@ -31,7 +31,7 @@ export default function Collage({ className, images }) {
       <div className="w-full col-span-1">
         <div
           style={{
-            backgroundImage: `url(${images[randomNum2].metaLink})`,
+            backgroundImage: `url(${images[randomNum2].srcLink})`,
           }}
           className="w-full duration-500 bg-center  h-[8.5rem] bg-cover aspect-video rounded-2xl"
         ></div>
@@ -39,7 +39,7 @@ export default function Collage({ className, images }) {
       <div className="w-full col-span-1">
         <div
           style={{
-            backgroundImage: `url(${images[randomNum3].metaLink})`,
+            backgroundImage: `url(${images[randomNum3].srcLink})`,
           }}
           className="w-full duration-500 bg-center  h-[8.5rem] bg-cover aspect-video rounded-2xl"
         ></div>
@@ -47,7 +47,7 @@ export default function Collage({ className, images }) {
       <div className="w-full col-span-2">
         <div
           style={{
-            backgroundImage: `url(${images[randomNum4].metaLink})`,
+            backgroundImage: `url(${images[randomNum4].srcLink})`,
           }}
           className="w-full duration-500 bg-center  h-[8.5rem] bg-cover aspect-video rounded-2xl"
         ></div>

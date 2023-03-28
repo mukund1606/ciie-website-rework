@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
-export default function Event({ eventData }) {
+export default function Event({ eventData, isAutoSlide = false }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
@@ -18,6 +18,16 @@ export default function Event({ eventData }) {
     setCurrentIndex(newIndex);
   };
 
+  // Auto Slide
+  if (isAutoSlide) {
+    useEffect(() => {
+      const interval = setInterval(() => {
+        nextSlide();
+      }, 2500);
+      return () => clearInterval(interval);
+    }, [currentIndex]);
+  }
+
   return (
     <>
       {
@@ -25,7 +35,7 @@ export default function Event({ eventData }) {
         eventData !== undefined &&
           eventData["images"].map((image) => (
             <img
-              src={image.metaLink}
+              src={image.srcLink}
               alt={image.fileName}
               key={image.fileID}
               className="hidden"
@@ -37,14 +47,14 @@ export default function Event({ eventData }) {
           <div className="relative p-5 lg:w-[80%] xl:w-[75%] lg:mx-auto group">
             <div
               style={{
-                backgroundImage: `url(${eventData.images[currentIndex].metaLink})`,
+                backgroundImage: `url(${eventData.images[currentIndex].srcLink})`,
               }}
               className="w-full duration-500 bg-center bg-cover aspect-video rounded-2xl"
             ></div>
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 m-2 bg-black/20 text-white cursor-pointer">
               <BsChevronCompactLeft onClick={prevSlide} size={30} />
             </div>
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 m-2 bg-black/20 text-white cursor-pointer">
               <BsChevronCompactRight onClick={nextSlide} size={30} />
             </div>
           </div>
