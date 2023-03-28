@@ -49,22 +49,24 @@ const EventBlock = ({ events, desc, setIsEventOpen, setEventData }) => {
   );
 };
 
-export default function Events() {
+export default function Events(props) {
   const [isEventOpen, setIsEventOpen] = useState(false);
   const [eventData, setEventData] = useState(undefined);
-  const [allData, setAllData] = useState(undefined);
-  useEffect(() => {
-    fetch("/api/data")
-      .then((res) => res.json())
-      .then((data) => setAllData(sortEvents(data)));
-  }, []);
+  const allData = sortEvents(props.events);
+  // const [allData, setAllData] = useState(undefined);
+  // useEffect(() => {
+  // setAllData(sortEvents(props.events));
+  // fetch("/api/data")
+  //   .then((res) => res.json())
+  //   .then((data) => setAllData(sortEvents(data)));
+  // }, []);
 
   return (
     <>
       <Navbar />
       <div className="events px-14">
         {allData !== undefined && (
-          <>
+          <div>
             <EventBlock
               events={allData.ongoingEvents}
               desc="Ongoing"
@@ -104,7 +106,7 @@ export default function Events() {
                 </div>
               </div>
             )}
-          </>
+          </div>
         )}
       </div>
       <Footer />
@@ -132,3 +134,14 @@ const sortEvents = (events) => {
   });
   return { pastEvents, upcomingEvents, ongoingEvents };
 };
+
+export async function getServerSideProps() {
+  const events = await fetch(
+    "https://ciie-website-rework.vercel.app/api/data"
+  ).then((res) => res.json());
+  return {
+    props: {
+      events,
+    },
+  };
+}

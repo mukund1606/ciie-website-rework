@@ -26,9 +26,9 @@ export default function Event({ eventData }) {
         eventData !== undefined &&
           eventData["images"].map((image) => (
             <img
-              src={image.directLink}
+              src={image.metaLink}
               alt={image.fileName}
-              key={image.directLink}
+              key={image.fileID}
               className="hidden"
             />
           ))
@@ -38,7 +38,7 @@ export default function Event({ eventData }) {
           <div className="relative p-5 lg:w-[80%] xl:w-[75%] lg:mx-auto group">
             <div
               style={{
-                backgroundImage: `url(${eventData.images[currentIndex].directLink})`,
+                backgroundImage: `url(${eventData.images[currentIndex].metaLink})`,
               }}
               className="w-full duration-500 bg-center bg-cover aspect-video rounded-2xl"
             ></div>

@@ -5,28 +5,28 @@ export default function Collage({ className, images, ...props }) {
     <div className={`${className} grid grid-cols-3 gap-2 md:h-[18rem] `}>
       <div className="w-full col-span-2">
         <motion.img
-          src={images[0].directLink}
+          src={images[0].metaLink}
           className="object-cover w-full rounded-md h-[8.5rem]"
           loading="lazy"
         />
       </div>
       <div className="w-full col-span-1">
         <motion.img
-          src={images[1].directLink}
+          src={images[1].metaLink}
           className="object-cover w-full h-[8.5rem] rounded-md"
           loading="lazy"
         />
       </div>
       <div className="w-full col-span-1">
         <motion.img
-          src={images[2].directLink}
+          src={images[2].metaLink}
           className="object-cover w-full h-[8.5rem] rounded-md"
           loading="lazy"
         />
       </div>
       <div className="w-full col-span-2">
         <motion.img
-          src={images[3].directLink}
+          src={images[3].metaLink}
           className="object-cover w-full h-[8.5rem] rounded-md"
           loading="lazy"
         />
