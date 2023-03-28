@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 export default function Event({ eventData }) {

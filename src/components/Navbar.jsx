@@ -83,6 +83,16 @@ export default function Navbar() {
           style={{ scaleX: scrollYProgress }}
         />
         <div className="flex items-center justify-around gap-2 p-1 py-0">
+          <div className="w-[8rem]">
+            <Link href="/">
+              <CIIELogo className="w-full p-5 transition ease-in dark:text-darkTheme-white-100 text-lightTheme-black-100 duration-400 hover:scale-110" />
+            </Link>
+          </div>
+          <div className="items-center hidden nav md:flex">
+            <ul className="flex gap-8 md:gap-5 lg:gap-8">
+              <NavElement />
+            </ul>
+          </div>
           <div className="image-box">
             <Link href="/">
               {isDarkMode ? (
@@ -98,16 +108,6 @@ export default function Navbar() {
                   className="w-40 transition ease-in hover:scale-105 duration-400"
                 />
               )}
-            </Link>
-          </div>
-          <div className="items-center hidden nav md:flex">
-            <ul className="flex gap-8 md:gap-5 lg:gap-8">
-              <NavElement />
-            </ul>
-          </div>
-          <div className="w-[8rem]">
-            <Link href="/">
-              <CIIELogo className="w-full p-5 transition ease-in dark:text-darkTheme-white-100 text-lightTheme-black-100 duration-400 hover:scale-110" />
             </Link>
           </div>
           <div className="flex items-center mobile-nav md:hidden">
