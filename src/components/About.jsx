@@ -4,7 +4,7 @@ export default function About() {
   return (
     <>
       <motion.div
-        className="flex flex-col justify-center gap-5 p-16"
+        className="flex flex-col justify-center gap-5 p-8 md:p-16"
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut", delay: 4.2 }}

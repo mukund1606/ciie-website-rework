@@ -49,8 +49,8 @@ export default function Team() {
                           alt={member.name}
                           className="object-cover rounded-full w-80 h-80"
                         />
-                        <h3>{member.name}</h3>
-                        <h4>{member.course}</h4>
+                        <h4>{member.name}</h4>
+                        <h5>{member.course}</h5>
                       </Link>
                     );
                   })}
