@@ -17,7 +17,7 @@ const EventBlock = ({ events, desc }) => {
           <div className="flex flex-col flex-wrap items-center justify-around w-full gap-8 md:flex-row">
             {events.length === 0 && (
               <>
-                <div className="flex flex-col items-center justify-center w-full gap-4 p-5 text-center bg-lightTheme-black-50 dark:bg-opacity-20 dark:bg-darkTheme-white-50 bg-opacity-20 rounded-xl">
+                <div className="flex flex-col items-center justify-center w-full max-w-4xl gap-4 p-5 text-center bg-lightTheme-black-50 dark:bg-opacity-20 dark:bg-darkTheme-white-50 bg-opacity-20 rounded-xl">
                   <h4>No Events</h4>
                   <p>There are no {desc} events</p>
                 </div>
@@ -32,7 +32,6 @@ const EventBlock = ({ events, desc }) => {
                 >
                   <div>
                     <h4>{event.folderName}</h4>
-                    <p>{event.folderDescription}</p>
                   </div>
                   <Collage
                     className="z-10 aspect-video"

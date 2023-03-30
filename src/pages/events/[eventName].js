@@ -73,9 +73,9 @@ export default function EventDetails() {
           <div className="mb-16 events px-14">
             {eventData !== undefined && (
               <div className="flex flex-col items-center justify-center event">
-                <div className="flex flex-col items-center justify-center w-4/5">
+                <div className="flex flex-col items-center justify-center w-4/5 text-center">
                   <h3 className="font-bold">{eventData.folderName}</h3>
-                  <p>{eventData.folderDescription}</p>
+                  <p className="p-5">{eventData.folderDescription}</p>
                 </div>
                 <div className="w-full">
                   <div className="relative p-5 lg:w-[80%] xl:w-[75%] lg:mx-auto group">
