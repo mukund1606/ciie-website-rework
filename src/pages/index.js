@@ -9,15 +9,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>
-          CIIE - Center for Innovation, Incubation and Entrepreneurship
-        </title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.png" />
-      </Head>
-
       <Navbar />
       <Hero />
       <hr className="h-[2px] bg-lightTheme-black-50 dark:bg-gradient-to-tr to-lightTheme-primary from-lightTheme-secondary border-0 opacity-20" />

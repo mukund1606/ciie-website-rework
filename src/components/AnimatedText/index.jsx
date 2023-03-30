@@ -15,7 +15,7 @@ export default function AnimatedTest({ text, delay = 0, animationTime = 0.5 }) {
               ease: "easeOut",
               delay: Number(delay) + index * perLetterDelay,
             }}
-            viewport={{ once: true }}
+            viewport={{ once: true }} 
           >
             {word}
           </motion.span>

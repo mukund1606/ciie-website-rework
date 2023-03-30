@@ -1,35 +1,40 @@
 import { motion } from "framer-motion";
-import AnimatedText from "./AnimatedText";
 
 export default function Hero() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-5 p-5 text-center md:p-8">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center justify-center gap-5 p-5 text-center md:p-8"
+      >
         <h2 className="font-extrabold">
-          <AnimatedText delay={0.3} text="Centre for " />
+          Centre for{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-tr from-lightTheme-primary to-lightTheme-secondary">
-            <AnimatedText delay={0.8} text="Innovation" />
+            Innovation
           </span>
-          <AnimatedText delay={1.3} text=" , " />
+          ,{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-tr from-lightTheme-primary to-lightTheme-secondary">
-            <AnimatedText delay={1.8} text="Incubation " />
-          </span>
-          <AnimatedText delay={2.3} text=" and " />
+            Incubation
+          </span>{" "}
+          and{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-tr from-lightTheme-primary to-lightTheme-secondary">
-            <AnimatedText delay={2.8} text="Entrepreneurship" />
+            Entrepreneurship
           </span>
         </h2>
         <motion.h4
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 3.3 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
           viewport={{ once: true }}
           className="w-4/6"
         >
           SRM University, Delhi-NCR, Sonepat
         </motion.h4>
         <br />
-      </div>
+      </motion.div>
     </>
   );
 }

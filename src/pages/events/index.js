@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Collage from "@/components/Collage";
-import Event from "@/components/Event";
+import Link from "next/link";
 import Loading from "@/components/Loading";
+import { motion } from "framer-motion";
 
-const EventBlock = ({ events, desc, setIsEventOpen, setEventData }) => {
+const EventBlock = ({ events, desc }) => {
   return (
     <>
       {events !== undefined && (
@@ -24,12 +25,9 @@ const EventBlock = ({ events, desc, setIsEventOpen, setEventData }) => {
             )}
             {events.map((event) => {
               return (
-                <div
+                <Link
+                  href={`/events/${event.folderName}`}
                   className="flex flex-col items-center justify-center gap-4 p-5 text-center duration-200 ease-in cursor-pointer bg-lightTheme-black-50 dark:bg-opacity-20 dark:bg-darkTheme-white-50 bg-opacity-20 rounded-xl hover:scale-110 saturate-150"
-                  onClick={() => {
-                    setIsEventOpen(true);
-                    setEventData(event);
-                  }}
                   key={event._id}
                 >
                   <div>
@@ -40,7 +38,7 @@ const EventBlock = ({ events, desc, setIsEventOpen, setEventData }) => {
                     className="z-10 aspect-video"
                     images={event.images}
                   />
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -51,9 +49,7 @@ const EventBlock = ({ events, desc, setIsEventOpen, setEventData }) => {
 };
 
 export default function Events() {
-  const [isEventOpen, setIsEventOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [eventData, setEventData] = useState(undefined);
   const [allData, setAllData] = useState(undefined);
   useEffect(() => {
     fetch("/api/data")
@@ -71,54 +67,24 @@ export default function Events() {
       ) : (
         <>
           <Navbar />
-          <div className="events px-14">
+          <motion.div
+            className="mb-16 events px-14"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+            viewport={{ once: true }}
+          >
             {allData !== undefined && (
               <div>
-                <EventBlock
-                  events={allData.ongoingEvents}
-                  desc="Ongoing"
-                  setIsEventOpen={setIsEventOpen}
-                  setEventData={setEventData}
-                />
-                <EventBlock
-                  events={allData.upcomingEvents}
-                  desc="Upcoming"
-                  setIsEventOpen={setIsEventOpen}
-                  setEventData={setEventData}
-                />
-                <EventBlock
-                  events={allData.pastEvents}
-                  desc="Past"
-                  setIsEventOpen={setIsEventOpen}
-                  setEventData={setEventData}
-                />
-                {isEventOpen && (
-                  <div className="fixed bottom-0 left-0 right-0 w-full overflow-hidden rounded-lg bg-lightTheme-black-10 dark:bg-darkTheme-white-10 top-36 bg-opacity-10 dark:bg-opacity-60 backdrop-blur-lg">
-                    <div className="flex flex-col items-center justify-center py-5 md:p-10">
-                      <button
-                        className="primary"
-                        onClick={() => {
-                          setIsEventOpen(false);
-                          setEventData(undefined);
-                        }}
-                      >
-                        Click Me To Close
-                      </button>
-                      <div className="w-full lg:w-[90%]">
-                        <Event
-                          eventData={eventData}
-                          setIsEventOpen={setIsEventOpen}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <EventBlock events={allData.ongoingEvents} desc="Ongoing" />
+                <EventBlock events={allData.upcomingEvents} desc="Upcoming" />
+                <EventBlock events={allData.pastEvents} desc="Past" />
               </div>
             )}
-          </div>
-          <Footer />
+          </motion.div>
         </>
       )}
+      <Footer />
     </>
   );
 }

@@ -7,7 +7,7 @@ export default function About() {
         className="flex flex-col justify-center gap-5 p-16"
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 5.5 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 4.2 }}
         viewport={{ once: true }}
       >
         <h3 className="font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-lightTheme-primary to-lightTheme-secondary">

@@ -48,8 +48,12 @@ export default function Testimonials() {
                 alt=""
                 className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full"
               />
-              <p className="text-xl font-semibold leading-tight">{data.name}</p>
-              <p className="text-sm uppercase">{data.position}</p>
+              <p className="text-xl font-semibold leading-tight text-lightTheme-black-10 dark:text-darkTheme-white-100">
+                {data.name}
+              </p>
+              <p className="text-sm uppercase text-lightTheme-black-10 dark:text-darkTheme-white-100">
+                {data.position}
+              </p>
             </div>
           </motion.div>
         ))}
