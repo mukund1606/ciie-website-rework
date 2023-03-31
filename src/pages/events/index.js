@@ -5,6 +5,7 @@ import Collage from "@/components/Collage";
 import Link from "next/link";
 import Loading from "@/components/Loading";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const EventBlock = ({ events, desc }) => {
   return (
@@ -61,6 +62,9 @@ export default function Events() {
 
   return (
     <>
+      <Head>
+        <title>Events | CIIE</title>
+      </Head>
       {!isLoaded ? (
         <Loading />
       ) : (

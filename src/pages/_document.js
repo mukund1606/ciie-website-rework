@@ -4,13 +4,7 @@ import CIIELogo from "@/utils/CIIELogoNoText";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head>
-        <title>
-          CIIE - Center for Innovation, Incubation and Entrepreneurship
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.png" />
-      </Head>
+      <Head />
       <body className="min-h-screen bg-lightTheme-white dark:bg-darkTheme-black scrollbar-thumb-lightTheme-black-50 scrollbar-thin scrollbar-track-lightTheme-black-25 dark:scrollbar-thumb-darkTheme-white-50 dark:scrollbar-track-darkTheme-white-25">
         <div className="overflow-x-hidden App">
           <div className="flex items-center justify-center">

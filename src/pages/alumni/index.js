@@ -3,10 +3,14 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import alumniData from "@/data/alumniData.json";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Alumni() {
   return (
     <>
+      <Head>
+        <title>Alumni | CIIE</title>
+      </Head>
       <Navbar />
       <motion.div
         initial={{ opacity: 0 }}
@@ -34,11 +38,12 @@ export default function Alumni() {
                     key={data.name}
                     className="flex flex-col items-center justify-center gap-5 p-5 text-center cursor-pointer md:p-8"
                   >
-                    <img
-                      src={data.photoUrl}
-                      alt={data.name}
-                      className="object-cover rounded-[2.5rem] w-[40rem] h-[20rem]"
-                    />
+                    <div
+                      style={{
+                        backgroundImage: `url(${data.photoUrl})`,
+                      }}
+                      className="bg-center bg-cover rounded-[2.5rem] w-[40rem] h-[20rem]"
+                    ></div>
                     <h4>{data.name}</h4>
                     <h5>{data.branch}</h5>
                     <h5>({data.batch})</h5>

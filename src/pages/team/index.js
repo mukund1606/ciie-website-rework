@@ -4,13 +4,15 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import teamData from "@/data/teamData.json";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Team() {
   return (
     <>
+      <Head>
+        <title>Team | CIIE</title>
+      </Head>
       <Navbar />
-      {/* <Hero /> */}
-      {/* <hr className="h-[2px] bg-lightTheme-black-50 dark:bg-gradient-to-tr to-lightTheme-primary from-lightTheme-secondary border-0 opacity-20" /> */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -42,13 +44,14 @@ export default function Team() {
                       <Link
                         href={`/team/${member.name}`}
                         key={member.name}
-                        className="flex flex-col items-center justify-center gap-5 p-5 text-center duration-300 ease-in cursor-pointer md:p-8 hover:scale-110"
+                        className="flex flex-col items-center justify-center gap-5 p-5 text-center cursor-pointer hover:scale-110 md:p-8"
                       >
-                        <img
-                          src={member.photoUrl}
-                          alt={member.name}
-                          className="object-cover rounded-full w-80 h-80"
-                        />
+                        <div
+                          style={{
+                            backgroundImage: `url(${member.photoUrl})`,
+                          }}
+                          className="bg-center bg-cover rounded-full w-80 h-80"
+                        ></div>
                         <h4>{member.name}</h4>
                         <h5>{member.course}</h5>
                       </Link>
