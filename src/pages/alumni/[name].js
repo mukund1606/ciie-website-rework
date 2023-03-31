@@ -48,7 +48,6 @@ export default function AlumniData() {
             <div className="flex flex-col items-center justify-center w-full gap-5">
               <div className="flex flex-col items-center justify-center w-full gap-5 p-8 bg-opacity-50 border-y bg-lightTheme-black-25 dark:bg-darkTheme-white-25 dark:bg-opacity-50 drop-shadow-lg">
                 <img
-
                   src={memberData.photoUrl}
                   alt={memberData.name}
                   className="object-cover rounded-[2.5rem] w-full md:w-4/6 lg:w-2/6 aspect-video"

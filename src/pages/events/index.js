@@ -85,14 +85,14 @@ export default function Events() {
               </div>
             )}
           </motion.div>
+          <Footer />
         </>
       )}
-      <Footer />
     </>
   );
 }
 
-function sortEvents(events){
+function sortEvents(events) {
   events = events.sort((a, b) => {
     return new Date(b.eventDate) - new Date(a.eventDate);
   });
@@ -117,4 +117,4 @@ function sortEvents(events){
     }
   });
   return { pastEvents, upcomingEvents, ongoingEvents };
-};
+}

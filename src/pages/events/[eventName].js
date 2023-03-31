@@ -85,8 +85,39 @@ export default function EventDetails() {
             {eventData !== undefined && (
               <div className="flex flex-col items-center justify-center event">
                 <div className="flex flex-col items-center justify-center w-4/5 text-center">
-                  <h2 className="font-semibold text-center text-transparent bg-clip-text bg-gradient-to-tr from-lightTheme-primary to-lightTheme-secondary">{eventData.folderName}</h2>
-                  <p className="p-2 py-5">{eventData.folderDescription}</p>
+                  <h2 className="font-semibold text-center text-transparent bg-clip-text bg-gradient-to-tr from-lightTheme-primary to-lightTheme-secondary">
+                    {eventData.folderName}
+                  </h2>
+                  <div>
+                    <div>
+                      <h4 className="inline">Event Date: </h4>
+                      <span className="inline">
+                        {new Date(eventData.startDate).toLocaleDateString()} -{" "}
+                        {new Date(eventData.endDate).toLocaleDateString()}
+                      </span>
+                    </div>
+                    <div>
+                      <h4 className="inline">Event Time: </h4>
+                      <span className="inline">
+                        {new Date(
+                          new Date(eventData.startDate) - 19800000
+                        ).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}{" "}
+                        -{" "}
+                        {new Date(
+                          new Date(eventData.endDate) - 19800000
+                        ).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </span>
+                    </div>
+                    <br />
+                    <h4>Description</h4>
+                    <p className="p-2 py-5">{eventData.folderDescription}</p>
+                  </div>
                 </div>
                 <div className="w-full">
                   <div className="relative lg:w-[80%] xl:w-[75%] lg:mx-auto group">
