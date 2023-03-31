@@ -46,18 +46,17 @@ export default function TeamMember() {
           >
             <div className="flex flex-col items-center justify-center w-full gap-5">
               <div className="flex flex-col items-center justify-center w-full gap-5 p-8 bg-opacity-50 border-y bg-lightTheme-black-25 dark:bg-darkTheme-white-25 dark:bg-opacity-50 drop-shadow-lg">
-                <div
-                  style={{
-                    backgroundImage: `url(${memberData.photoUrl})`,
-                  }}
-                  className="bg-center bg-cover rounded-full w-96 h-96"
-                ></div>
+                <img
+                  src={memberData.photoUrl}
+                  alt={memberData.name}
+                  className="object-cover w-64 rounded-full md:w-80 lg:w-96 aspect-square"
+                />
               </div>
-              <div className="w-4/6 mb-20">
+              <div className="flex flex-col items-center w-full gap-1 px-2 mb-20 md:w-4/6">
                 <h2>{memberData.name}</h2>
                 <h4>{memberData.course}</h4>
                 <h4>{memberData.batch}</h4>
-                <p>{memberData.description}</p>
+                <p className="w-5/6 md:w-full">{memberData.description}</p>
               </div>
             </div>
           </motion.div>

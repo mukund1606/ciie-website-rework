@@ -81,15 +81,15 @@ export default function EventDetails() {
               ))
           }
           <Navbar />
-          <div className="mb-16 events px-14">
+          <div className="px-2 mb-16 md:px-6 lg-px-12 events">
             {eventData !== undefined && (
               <div className="flex flex-col items-center justify-center event">
                 <div className="flex flex-col items-center justify-center w-4/5 text-center">
-                  <h3 className="font-bold">{eventData.folderName}</h3>
-                  <p className="p-5">{eventData.folderDescription}</p>
+                  <h2 className="font-semibold text-center text-transparent bg-clip-text bg-gradient-to-tr from-lightTheme-primary to-lightTheme-secondary">{eventData.folderName}</h2>
+                  <p className="p-2 py-5">{eventData.folderDescription}</p>
                 </div>
                 <div className="w-full">
-                  <div className="relative p-5 lg:w-[80%] xl:w-[75%] lg:mx-auto group">
+                  <div className="relative lg:w-[80%] xl:w-[75%] lg:mx-auto group">
                     <div
                       style={{
                         backgroundImage: `url(${eventData.images[currentIndex].srcLink})`,

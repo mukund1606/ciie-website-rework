@@ -41,8 +41,8 @@ export default function Cards({ isAutoSlide = true }) {
           ))
       }
       {slideData !== undefined && (
-        <div className="w-full event">
-          <div className="relative md:p-5 w-full lg:w-[80%] xl:w-[75%] lg:mx-auto group">
+        <div className="w-full my-4 event">
+          <div className="relative w-full lg:w-[80%] xl:w-[75%] lg:mx-auto group">
             <div
               style={{
                 backgroundImage: `url(${slideData[currentIndex].image})`,

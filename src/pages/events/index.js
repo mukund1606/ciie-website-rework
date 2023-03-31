@@ -71,7 +71,7 @@ export default function Events() {
         <>
           <Navbar />
           <motion.div
-            className="mb-16 events px-14"
+            className="p-4 mb-16 events md:m-6 lg:p-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
@@ -92,7 +92,7 @@ export default function Events() {
   );
 }
 
-const sortEvents = (events) => {
+function sortEvents(events){
   events = events.sort((a, b) => {
     return new Date(b.eventDate) - new Date(a.eventDate);
   });

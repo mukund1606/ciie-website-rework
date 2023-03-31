@@ -76,16 +76,16 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="h-36" />
+      <div className="h-[8.5rem]" />
       <nav className="fixed top-0 z-10 flex flex-col w-full min-w-full rounded-b-lg shadow bg-lightTheme-white dark:bg-darkTheme-black bg-opacity-60 dark:bg-opacity-60 dark:shadow-darkTheme-white-10 backdrop-blur">
         <motion.div
-          className="h-2 w-full bg-gradient-to-r from-lightTheme-primary to-lightTheme-secondary z-[100]"
+          className="h-2 w-full bg-gradient-to-r from-lightTheme-primary via-lightTheme-secondary to-lightTheme-primary z-[100]"
           style={{ scaleX: scrollYProgress }}
         />
         <div className="flex items-center justify-around gap-2 p-1 py-0">
           <div className="w-[8rem]">
             <Link href="/">
-              <CIIELogo className="w-full p-5 transition ease-in dark:text-darkTheme-white-100 text-lightTheme-black-100 duration-400 hover:scale-110" />
+              <CIIELogo className="w-full p-4 transition ease-in dark:text-darkTheme-white-100 text-lightTheme-black-100 duration-400 hover:scale-110" />
             </Link>
           </div>
           <div className="items-center hidden nav md:flex">

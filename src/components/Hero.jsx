@@ -28,7 +28,6 @@ export default function Hero() {
         >
           SRM University, Delhi-NCR, Sonepat
         </motion.h4>
-        <br />
       </div>
     </>
   );

@@ -47,14 +47,14 @@ export default function AlumniData() {
           >
             <div className="flex flex-col items-center justify-center w-full gap-5">
               <div className="flex flex-col items-center justify-center w-full gap-5 p-8 bg-opacity-50 border-y bg-lightTheme-black-25 dark:bg-darkTheme-white-25 dark:bg-opacity-50 drop-shadow-lg">
-                <div
-                  style={{
-                    backgroundImage: `url(${memberData.photoUrl})`,
-                  }}
-                  className="bg-center bg-cover rounded-[2.5rem] w-[45rem] h-[25rem]"
-                ></div>
+                <img
+
+                  src={memberData.photoUrl}
+                  alt={memberData.name}
+                  className="object-cover rounded-[2.5rem] w-full md:w-4/6 lg:w-2/6 aspect-video"
+                />
               </div>
-              <div className="w-4/6 mb-20">
+              <div className="w-full p-4 mb-20 md:w-4/6">
                 <h2>{memberData.name}</h2>
                 <h4>{memberData.branch}</h4>
                 <h4>({memberData.batch})</h4>

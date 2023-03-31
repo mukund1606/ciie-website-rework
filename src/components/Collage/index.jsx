@@ -19,7 +19,7 @@ export default function Collage({ className, images }) {
     };
   }, []);
   return (
-    <div className={`${className} grid grid-cols-3 gap-2 md:h-[18rem] `}>
+    <div className={`${className} grid grid-cols-3 gap-2 md:h-[18rem]`}>
       <div className="w-full col-span-2">
         <div
           style={{

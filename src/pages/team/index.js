@@ -18,7 +18,7 @@ export default function Team() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center justify-center gap-5 p-5 text-center md:p-8"
+        className="flex flex-col items-center justify-center gap-5 p-6 text-center lg:p-12 md:p-8"
       >
         <div className="p-5">
           <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-lightTheme-primary to-lightTheme-secondary">
@@ -29,7 +29,7 @@ export default function Team() {
           {Object.keys(teamData).map((batch) => {
             return (
               <div
-                className="flex flex-col items-center justify-center w-4/5 gap-5 p-5 bg-opacity-50 border rounded-[3rem] bg-lightTheme-black-25 dark:bg-darkTheme-white-25 dark:bg-opacity-50 drop-shadow-lg"
+                className="flex flex-col items-center justify-center w-full lg:w-4/5 gap-5 p-5 bg-opacity-50 border rounded-[3rem] bg-lightTheme-black-25 dark:bg-darkTheme-white-25 dark:bg-opacity-50 drop-shadow-lg"
                 key={batch}
               >
                 <div>
@@ -46,12 +46,11 @@ export default function Team() {
                         key={member.name}
                         className="flex flex-col items-center justify-center gap-5 p-5 text-center cursor-pointer hover:scale-110 md:p-8"
                       >
-                        <div
-                          style={{
-                            backgroundImage: `url(${member.photoUrl})`,
-                          }}
-                          className="bg-center bg-cover rounded-full w-80 h-80"
-                        ></div>
+                        <img
+                          src={member.photoUrl}
+                          alt={member.name}
+                          className="object-cover rounded-full w-60 md:w-64 lg:w-80 aspect-square"
+                        />
                         <h4>{member.name}</h4>
                         <h5>{member.course}</h5>
                       </Link>
